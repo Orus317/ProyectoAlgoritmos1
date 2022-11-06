@@ -117,7 +117,19 @@ namespace LibreriaClases
                     CRegistroVentas.ListarRegistroVentas(RegistroVentas);
                     break;
                 case 7:
-
+                    Console.WriteLine("IWP");
+                    break;
+                case 8:
+                    Console.WriteLine("IWP");
+                    break;
+                case 9:
+                    Console.Write("Ingresa la fecha: (ejemplo: 12/02/12) --> ");
+                    string _fecha = Console.ReadLine();
+                    CRegistroVentas.fecha_vendida(RegistroVentas, _fecha);
+                    break;
+                case 10:
+                    Console.Write("IWP");
+                    CRegistroVentas.producto_mas_vendido(RegistroVentas, Productos);
                     break;
                 default:
                     break;

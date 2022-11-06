@@ -74,8 +74,62 @@ namespace LibreriaClases
                     ((CProducto)k).Mostrar();
             }
         }
-        // Verificar que exista un cliente
-        
+        public static void fecha_vendida(ArrayList Lista, string fecha)
+        {
+            double a = 0;
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                if ((Lista[i] as CRegistroVentas).Fecha == fecha)
+                {
+                    a += (Lista[i] as CRegistroVentas).Cantidad * (Lista[i] as CRegistroVentas).PrecioUnitario;
+                }
+            }
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("Dinero recaudado de " + fecha);
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine(a);
+        }
+        public static void producto_mas_vendido(ArrayList Lista, ArrayList Lista2)
+        {
+            int mas_vendido = 0;
+            string id_mas_vendido = "";
+            string descripcion_mas_vendido = "";
+
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                int contador = 0;
+                string producto = (Lista[i] as CRegistroVentas).IdProducto;
+
+                for (int k = 0; k < Lista.Count; k++)
+                {
+                    if ((Lista[k] as CRegistroVentas).IdProducto == producto)
+                    {
+                        contador += (Lista[k] as CRegistroVentas).Cantidad;
+                    }
+
+                    // Establecer el el ID del producto más vendido
+                    if (contador > mas_vendido)
+                    {
+                        mas_vendido = contador;
+                        id_mas_vendido = (Lista[i] as CRegistroVentas).IdProducto;
+                    }
+                }
+            }
+            // Hallar la descripción de el producto más vendido
+            for (int k = 0; k < Lista2.Count; k++)
+            {
+                if ((Lista2[k] as CProducto).IdProducto == id_mas_vendido)
+                    descripcion_mas_vendido = (Lista2[k] as CProducto).Descripcion;
+            }
+
+            Console.WriteLine("------------------------");
+            Console.WriteLine("Producto más vendido");
+            Console.WriteLine("------------------------");
+            Console.WriteLine("ID del producto: " + id_mas_vendido);
+            Console.WriteLine("Descripción: " + descripcion_mas_vendido);
+            Console.WriteLine("Unidades vendidas: " + mas_vendido);
+        }
+
         public void Mostrar()
         {
             Console.WriteLine("Identificador de venta:" + IdVenta);
