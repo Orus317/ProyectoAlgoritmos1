@@ -13,10 +13,18 @@ namespace LibreriaClases
             get => _id; 
             set
             {
-                if (value.Length == 6)
+                if (value.Length == 8)
                 {
-                    string[] StringDni = value.Split("");
-                    int[] IntsDni = StringDni.Select(k => int.Parse(k)).ToArray();
+                    char[] StringDni = value.ToCharArray();
+                    try
+                    {
+                        int[] IntsDni = StringDni.Select(k => int.Parse(k.ToString())).ToArray();
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("El DNI ingresado no es válido");
+                        _id = "NE";
+                    }
                     _id = value;
                 }
                 else
@@ -48,7 +56,20 @@ namespace LibreriaClases
                     ((CCliente)k).Mostrar();
             }
         }
-
+        public static string ValidarCliente(ArrayList Clientes, string IDToProve)
+        {
+            foreach (object cliente in Clientes)
+            {
+                if (((CCliente)cliente).Id == IDToProve)
+                    return IDToProve;
+            }
+            Console.WriteLine("Este cliente no existe");
+            return "NE";
+        }
+        public override string ToString()
+        {
+            return Id;
+        }
         #endregion
 
     }

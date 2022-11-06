@@ -6,22 +6,22 @@ namespace LibreriaClases
     public class CRegistroVentas
     {
         // Atributos
-        private int _IdVenta;
-        private int _NroDocVenta;
+        private string _IdVenta;
+        private string _NroDocVenta;
         private string _Fecha;
         private string _IdCliente;
-        private int _IdProducto;
+        private string _IdProducto;
         private int _Cantidad;
-        private float _PrecioUnitario;
+        private double _PrecioUnitario;
 
-        // Getters and setters
+        #region Getters and setters
 
-        public int IdVenta
+        public string IdVenta
         {
             get => _IdVenta; set => _IdVenta = value;
         }
 
-        public int NroDocVenta
+        public string NroDocVenta
         {
             get => _NroDocVenta; set => _NroDocVenta = value;
         }
@@ -33,20 +33,10 @@ namespace LibreriaClases
 
         public string IdCliente
         {
-            get => _IdCliente; set
-            {
-                if (value.Length == 6)
-                {
-                    string[] StringDni = value.Split("");
-                    int[] IntsDni = StringDni.Select(k => int.Parse(k)).ToArray();
-                    _IdCliente = value;
-                }
-                else
-                    Console.WriteLine("El DNI está compuesto por 8 digitos");
-            }
+            get => _IdCliente; set => _IdCliente = value;
         }
 
-        public int IdProducto
+        public string IdProducto
         {
             get => _IdProducto; set => _IdProducto = value;
         }
@@ -57,18 +47,19 @@ namespace LibreriaClases
         }
 
 
-        public float PrecioUnitario
+        public double PrecioUnitario
         {
             get => _PrecioUnitario; set => _PrecioUnitario = value;
         }
+        #endregion
 
         // Constructor
-        public CRegistroVentas(int id_venta, int nro_docventa, string fecha, string id_cliente, int id_producto, int cantidad, float precio_unitario)
+        public CRegistroVentas(string id_venta, string nro_docventa, string fecha, string id_cliente, string id_producto, int cantidad, double precio_unitario, ArrayList Clientes)
         {
             IdVenta = id_venta;
             NroDocVenta = nro_docventa;
             Fecha = fecha;
-            IdCliente = id_cliente;
+            IdCliente = CCliente.ValidarCliente(Clientes, id_cliente);
             IdProducto = id_producto;
             Cantidad = cantidad;
             PrecioUnitario = precio_unitario;
@@ -83,7 +74,8 @@ namespace LibreriaClases
                     ((CProducto)k).Mostrar();
             }
         }
-
+        // Verificar que exista un cliente
+        
         public void Mostrar()
         {
             Console.WriteLine("Identificador de venta:" + IdVenta);

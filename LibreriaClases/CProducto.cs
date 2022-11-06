@@ -4,15 +4,15 @@ using System.Collections;
 namespace LibreriaClases
 {
     public class CProducto{
-        private int _IdProducto;
+        private string _IdProducto;
         private string _Descripcion;
         private string _Tipo;
         private string _UnidadMedida;
         private int _Stock;
-        private float _PrecioUnitario;
+        private double _PrecioUnitario;
 
         // Getters and setters
-        public int IdProducto{
+        public string IdProducto{
             get => _IdProducto; set => _IdProducto = value;
         }
 
@@ -33,12 +33,12 @@ namespace LibreriaClases
             get => _Stock; set => _Stock = value;
         }
 
-        public float PrecioUnitario{
+        public double PrecioUnitario{
             get => _PrecioUnitario; set => _PrecioUnitario = value;
         }
         
         // Constructor
-        public CProducto(int idproducto, string descripcion, string tipo, string unidadmedida, int stock, float preciounitario){
+        public CProducto(string idproducto, string descripcion, string tipo, string unidadmedida, int stock, double preciounitario){
             IdProducto = idproducto;
             Descripcion = descripcion;
             Tipo = tipo;
@@ -54,7 +54,16 @@ namespace LibreriaClases
             }
         }
 
-
+        public static string ValidarProducto(ArrayList Productos, string IDToProve)
+        {
+            foreach (object producto in Productos)
+            {
+                if (((CCliente)producto).Id == IDToProve)
+                    return IDToProve;
+            }
+            Console.WriteLine("Este producto no existe");
+            return "NE";
+        }
 
         public void Mostrar(){
             Console.WriteLine("Identificardor: " + IdProducto);
