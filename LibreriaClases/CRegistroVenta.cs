@@ -71,7 +71,11 @@ namespace LibreriaClases
             foreach (object k in arr)
             {
                 if (k is CRegistroVentas)
+                {
+                    Console.WriteLine("--------------------");
                     ((CRegistroVentas)k).Mostrar();
+                    Console.WriteLine("--------------------");
+                }
             }
         }
         public static void fecha_vendida(ArrayList Lista, string fecha)

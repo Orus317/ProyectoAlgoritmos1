@@ -49,8 +49,12 @@ namespace LibreriaClases
         
         public static void ListarProductos(ArrayList arr){
             foreach (object k in arr){
-                if (k is CProducto) 
+                if (k is CProducto)
+                {
+                    Console.WriteLine("--------------------");
                     ((CProducto)k).Mostrar();
+                    Console.WriteLine("--------------------");
+                }
             }
         }
 
