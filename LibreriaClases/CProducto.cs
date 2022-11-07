@@ -63,8 +63,10 @@ namespace LibreriaClases
             foreach (object producto in Productos)
             {
                 if (((CCliente)producto).Id == IDToProve)
+                    // Si existe el producto lo devolvemos
                     return IDToProve;
             }
+            // Si no se encontró el producto
             Console.WriteLine("Este producto no existe");
             return "NE";
         }
