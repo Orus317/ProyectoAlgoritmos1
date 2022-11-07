@@ -71,7 +71,7 @@ namespace LibreriaClases
             foreach (object k in arr)
             {
                 if (k is CRegistroVentas)
-                    ((CProducto)k).Mostrar();
+                    ((CRegistroVentas)k).Mostrar();
             }
         }
         public static void fecha_vendida(ArrayList Lista, string fecha)
