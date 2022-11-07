@@ -37,20 +37,13 @@ namespace LibreriaClases
         {
             Console.WriteLine("=====================================");
             Console.WriteLine("APP CENTRO COMERCIAL - SUPERMERCADO");
-            // Ejecutar constructor de un producto
             Console.WriteLine("1. Ingreso de nuevos productos");
-            // Ejecutar constructor de cliente
             Console.WriteLine("2. Ingreso de nuevos clientes");
-            // Validar cliente, producto y stock enough -> update stock
-            // Las ventas tmb se registrarán en un arrayList, que 
             Console.WriteLine("3. Registrar venta");
-            // Los clientes se almacenarán en un arrayList. Un foreach que despliegue Mostrar() de cada cliente
             Console.WriteLine("4. Lista general de clientes");
             Console.WriteLine("5. Lista general de productos");
             Console.WriteLine("6. Lista general de ventas");
-            // Esta app debe tener por los menos los sig datos: NroDocVenta, ClientName, ProductName, Cantidad, PrecioUnitario, Subtotal 
             Console.WriteLine("7. Lista de ventas de una fecha determinada");
-            // NroDocVenta, Fecha, NombreProducto, Cantidad, PrecioUnitario, Subtotal
             Console.WriteLine("8. Lista de ventas de un cliente determinado");
             Console.WriteLine("9. Total de dinero recaudado en una fecha");
             Console.WriteLine("10. El producto que más se vendió");
