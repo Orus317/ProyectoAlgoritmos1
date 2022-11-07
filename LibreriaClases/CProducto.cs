@@ -62,7 +62,7 @@ namespace LibreriaClases
         {
             foreach (object producto in Productos)
             {
-                if (((CCliente)producto).Id == IDToProve)
+                if (((CProducto)producto).IdProducto == IDToProve)
                     // Si existe el producto lo devolvemos
                     return IDToProve;
             }

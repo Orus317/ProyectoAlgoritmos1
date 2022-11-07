@@ -91,7 +91,7 @@ namespace LibreriaClases
                     string _id = Console.ReadLine();
                     Console.Write("Ingresar el número del documento de venta: ");
                     string nro_venta = Console.ReadLine();
-                    Console.Write("Ingresar la fecha");
+                    Console.Write("Ingresar la fecha: ");
                     string fecha = Console.ReadLine();
                     Console.Write("Ingresar el id del cliente: ");
                     string id_cliente = CCliente.ValidarCliente(Clientes, Console.ReadLine());
