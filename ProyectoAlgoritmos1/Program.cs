@@ -24,8 +24,8 @@ Clientes.Add(new CCliente("11423917", "Jacobo de Perera", "5299 High End"));
 Clientes.Add(new CCliente("67432981", "María José Villena Pinedo", "4942 Harvest Apple Plaza"));
 Clientes.Add(new CCliente("55852593", "Hortensia Elena Barco Palma", "98 Emerald Lane"));
 Clientes.Add(new CCliente("42691085", "Osvaldo Menéndez Alcalá", "8796 Pleasant Arbor"));
-Clientes.Add(new CCliente("072516", "Jose Francisco Galvez Alberola", "8011 Blue Grove Highlands"));
-Clientes.Add(new CCliente("226717", "Leyre Romero Carrión", "7686 Dusty Corner"));
+Clientes.Add(new CCliente("07251654", "Jose Francisco Galvez Alberola", "8011 Blue Grove Highlands"));
+Clientes.Add(new CCliente("22671767", "Leyre Romero Carrión", "7686 Dusty Corner"));
 #endregion
 
 ArrayList Productos = new();
@@ -72,8 +72,8 @@ RegistroVentas.Add(new CRegistroVentas("86736", "00015", "11/03/2021", "11423917
 RegistroVentas.Add(new CRegistroVentas("87736", "00016", "11/03/2021", "67432981", "0606", 1, 4.0, Clientes));
 RegistroVentas.Add(new CRegistroVentas("88736", "00017", "12/04/2021", "55852593", "0707", 1, 4.3, Clientes));
 RegistroVentas.Add(new CRegistroVentas("89736", "00018", "12/05/2021", "42691085", "0808", 1, 1.5, Clientes));
-RegistroVentas.Add(new CRegistroVentas("81736", "00019", "10/05/2021", "072516", "0909", 1, 1.5, Clientes));
-RegistroVentas.Add(new CRegistroVentas("72736", "00020", "12/05/2021", "226717", "1010", 1, 1.5, Clientes));
+RegistroVentas.Add(new CRegistroVentas("81736", "00019", "10/05/2021", "22671767", "0909", 1, 1.5, Clientes));
+RegistroVentas.Add(new CRegistroVentas("72736", "00020", "12/05/2021", "22671767", "1010", 1, 1.5, Clientes));
 RegistroVentas.Add(new CRegistroVentas("73736", "00021", "12/05/2020", "95961212", "1111", 1, 1.5, Clientes));
 RegistroVentas.Add(new CRegistroVentas("74736", "00022", "12/04/2020", "36192134", "1212", 1, 1.5, Clientes));
 RegistroVentas.Add(new CRegistroVentas("75736", "00023", "11/04/2020", "85586251", "1313", 1, 2.5, Clientes));
@@ -92,8 +92,8 @@ RegistroVentas.Add(new CRegistroVentas("68736", "00035", "01/03/2020", "11423917
 RegistroVentas.Add(new CRegistroVentas("69736", "00036", "01/03/2022", "67432981", "1616", 1, 12.0, Clientes));
 RegistroVentas.Add(new CRegistroVentas("61736", "00037", "02/04/2020", "55852593", "1717", 1, 6.0, Clientes));
 RegistroVentas.Add(new CRegistroVentas("62736", "00038", "02/05/2022", "42691085", "1818", 1, 12.0, Clientes));
-RegistroVentas.Add(new CRegistroVentas("63736", "00039", "00/05/2020", "072516", "1919", 1, 5.0, Clientes));
-RegistroVentas.Add(new CRegistroVentas("54736", "00040", "02/05/2021", "226717", "2020", 1, 10.0, Clientes));
+RegistroVentas.Add(new CRegistroVentas("63736", "00039", "00/05/2020", "07251654", "1919", 1, 5.0, Clientes));
+RegistroVentas.Add(new CRegistroVentas("54736", "00040", "02/05/2021", "22671767", "2020", 1, 10.0, Clientes));
 RegistroVentas.Add(new CRegistroVentas("55736", "00051", "12/03/2020", "95961212", "0202", 1, 3.9, Clientes));
 RegistroVentas.Add(new CRegistroVentas("56736", "00052", "12/02/2020", "36192134", "0303", 1, 3.9, Clientes));
 RegistroVentas.Add(new CRegistroVentas("57736", "00053", "11/02/2021", "85586251", "0404", 1, 4.5, Clientes));
@@ -106,5 +106,8 @@ RegistroVentas.Add(new CRegistroVentas("54736", "00059", "10/03/2020", "05196068
 RegistroVentas.Add(new CRegistroVentas("55736", "00060", "12/03/2021", "97218107", "1111", 1, 1.5, Clientes));
 #endregion
 
-
-CMenu.MostrarMenu(Clientes, Productos, RegistroVentas);
+bool flag = true;
+while (flag)
+{
+    CMenu.MostrarMenu(Clientes, Productos, RegistroVentas);
+}

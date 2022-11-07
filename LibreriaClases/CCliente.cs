@@ -13,9 +13,9 @@ namespace LibreriaClases
             get => _id; 
             set
             {
-                if (value.Length == 8)
+                char[] StringDni = value.ToCharArray();
+                if (StringDni.Length == 8)
                 {
-                    char[] StringDni = value.ToCharArray();
                     try
                     {
                         int[] IntsDni = StringDni.Select(k => int.Parse(k.ToString())).ToArray();

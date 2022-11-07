@@ -155,6 +155,25 @@ namespace LibreriaClases
             Console.WriteLine("La fecha no es válida");
             return "NE";
         }
+        // Pregunta 8: Lista de ventas de un determinado cliente 
+        public static void listarVentasCliente(ArrayList Lista, string DNICliente)
+        {
+            int a = 0;
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                if ((Lista[i] as CRegistroVentas).IdCliente == DNICliente)
+                {
+                    Console.WriteLine("\n------------------------");
+                    Console.WriteLine("   Venta número " + ++a);
+                    Console.WriteLine("------------------------");
+                    (Lista[i] as CRegistroVentas).Mostrar();
+                    double subtotal = (Lista[i] as CRegistroVentas).Cantidad * (Lista[i] as CRegistroVentas).PrecioUnitario;
+                    Console.WriteLine("Subtotal: " + subtotal);
+                }
+            }
+            if (a == 0)
+                Console.WriteLine("No se encontraron ventas a " + DNICliente);
+        }
         public void Mostrar()
         {
             Console.WriteLine("Identificador de venta:" + IdVenta);

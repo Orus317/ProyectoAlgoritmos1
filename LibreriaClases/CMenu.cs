@@ -85,7 +85,7 @@ namespace LibreriaClases
                     string nombre = Console.ReadLine();
                     Console.Write("Ingresar la dirección del cliente");
                     string direccion = Console.ReadLine();
-                    CCliente _ = new(id, nombre, direccion);
+                    CCliente _p = new(id, nombre, direccion);
                     Console.WriteLine("--------");
                     break;
                 case 3:
@@ -124,7 +124,11 @@ namespace LibreriaClases
                     Console.WriteLine("--------");
                     break;
                 case 8:
-                    Console.WriteLine("IWP");
+                    Console.WriteLine("--------");
+                    Console.Write("Escribir el DNI del cliente");
+                    string _id_cliente = CCliente.ValidarCliente(Clientes, Console.ReadLine());
+                    CRegistroVentas.listarVentasCliente(RegistroVentas, _id_cliente);
+                    Console.WriteLine("--------");
                     break;
                 case 9:
                     Console.WriteLine("--------");
@@ -134,7 +138,6 @@ namespace LibreriaClases
                     Console.WriteLine("--------");
                     break;
                 case 10:
-                    Console.Write("IWP");
                     CRegistroVentas.producto_mas_vendido(RegistroVentas, Productos);
                     break;
                 default:
