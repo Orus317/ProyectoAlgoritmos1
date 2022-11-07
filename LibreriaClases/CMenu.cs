@@ -52,6 +52,8 @@ namespace LibreriaClases
             Console.WriteLine("7. Lista de ventas de una fecha determinada");
             // NroDocVenta, Fecha, NombreProducto, Cantidad, PrecioUnitario, Subtotal
             Console.WriteLine("8. Lista de ventas de un cliente determinado");
+            Console.WriteLine("9. Total de dinero recaudado en una fecha");
+            Console.WriteLine("10. El producto que más se vendió");
             Console.WriteLine(" -- Ingrese la opción: ");
             int Opcion = ValidarEntero("Debe ingresar un número, entre 1 y 8", 1, 8);
             EjecutarOpcion(Opcion, Clientes, Productos, RegistroVentas);
