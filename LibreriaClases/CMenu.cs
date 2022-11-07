@@ -82,13 +82,14 @@ namespace LibreriaClases
                     break;
                 case 2:
                     Console.WriteLine("--------");
-                    Console.Write("Ingresar código de cliente");
+                    Console.Write("Ingresar código de cliente: ");
                     string id = Console.ReadLine();
-                    Console.Write("Ingresar nombre del cliente");
+                    Console.Write("Ingresar nombre del cliente: ");
                     string nombre = Console.ReadLine();
-                    Console.Write("Ingresar la dirección del cliente");
+                    Console.Write("Ingresar la dirección del cliente: ");
                     string direccion = Console.ReadLine();
                     CCliente _p = new(id, nombre, direccion);
+                    Clientes.Add(_p);
                     Console.WriteLine("--------");
                     break;
                 case 3:
@@ -99,13 +100,13 @@ namespace LibreriaClases
                     string nro_venta = Console.ReadLine();
                     Console.Write("Ingresar la fecha");
                     string fecha = Console.ReadLine();
-                    Console.Write("Ingresar el id del cliente");
+                    Console.Write("Ingresar el id del cliente: ");
                     string id_cliente = CCliente.ValidarCliente(Clientes, Console.ReadLine());
-                    Console.Write("Ingresar el id del producto");
+                    Console.Write("Ingresar el id del producto: ");
                     string id_producto = CProducto.ValidarProducto(Productos, Console.ReadLine());
-                    Console.Write("Ingresar la cantidad de productos adquiridos");
+                    Console.Write("Ingresar la cantidad de productos adquiridos: ");
                     int cantidad = int.Parse(Console.ReadLine());
-                    Console.Write("Ingresar el precio unitario");
+                    Console.Write("Ingresar el precio unitario: ");
                     double _precioUnitario = double.Parse(Console.ReadLine());
                     CRegistroVentas nuevoRegistro = new(_id, nro_venta, fecha, id_cliente, id_producto, cantidad, _precioUnitario, Clientes);
                     Console.WriteLine("--------");
