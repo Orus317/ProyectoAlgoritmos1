@@ -68,8 +68,10 @@ namespace LibreriaClases
         // Listar 
         public static void ListarRegistroVentas(ArrayList arr)
         {
+            // Recorremos el ArrayList
             foreach (object k in arr)
             {
+                // Verificamos si k pertenece a la clase CRegistroVentas
                 if (k is CRegistroVentas)
                 {
                     Console.WriteLine("--------------------");
@@ -78,13 +80,16 @@ namespace LibreriaClases
                 }
             }
         }
+        
         // Calcular el dinero recaudado en una determinada fecha
         public static void fecha_vendida(ArrayList Lista, string fecha)
         {
+            // Variable auxiliar
             double a = 0;
-             // Recorrer la Lista
+             // Recorrer el ArrayList
             for (int i = 0; i < Lista.Count; i++)
             {
+                // Encontramos la fecha
                 if ((Lista[i] as CRegistroVentas).Fecha == fecha)
                 {
                     // Calcular el dinero recaudaddo
@@ -108,17 +113,19 @@ namespace LibreriaClases
             for (int i = 0; i < Lista.Count; i++)
             {
                 int contador = 0;
+                // Almacenamos el id del procucto de actual
                 string producto = (Lista[i] as CRegistroVentas).IdProducto;
-                // Encontramos la repetición del producto
+                // Recorremos el ArrayList por segunda vez para buscar las repeticiones de productos vendidos
                 for (int k = 0; k < Lista.Count; k++)
                 {
+                    // Encontramos la repetición del producto vendido
                     if ((Lista[k] as CRegistroVentas).IdProducto == producto)
                     {
                         // Sumamos la cantidad unidades vendidas 
                         contador += (Lista[k] as CRegistroVentas).Cantidad;
                     }
 
-                    // Establecer el el ID del producto más vendido
+                    // Establecer el ID del producto más vendido
                     if (contador > mas_vendido)
                     {
                         mas_vendido = contador;
@@ -129,7 +136,9 @@ namespace LibreriaClases
             // Hallar la descripción de el producto más vendido
             for (int k = 0; k < Lista2.Count; k++)
             {
+                // Encontramos el producto en la Lista2 
                 if ((Lista2[k] as CProducto).IdProducto == id_mas_vendido)
+                    // Obtenemos la descripción del producto
                     descripcion_mas_vendido = (Lista2[k] as CProducto).Descripcion;
             }
 
@@ -144,9 +153,12 @@ namespace LibreriaClases
         // Listado de las ventas de una determinada fecha
         public static void listarVentasPorFecha(ArrayList RegistroVentas, string fecha)
         {
+            // Validamos la fecha
             fecha = ValidarFecha(fecha);
+            //Recorremos el ArrayList
             foreach (object Venta in RegistroVentas)
             {
+                //Encontramos la fecha y mostramos la información de la venta
                 if (((CRegistroVentas)Venta).Fecha == fecha)
                     ((CRegistroVentas)Venta).Mostrar();
             }
@@ -177,7 +189,8 @@ namespace LibreriaClases
         // Lista de ventas de un determinado cliente 
         public static void listarVentasCliente(ArrayList Lista, string DNICliente)
         {
-            int a = 0;
+            int a = 0; // Variable para saber el número de ventas al cliente
+            // Recorremos el ArrayList
             for (int i = 0; i < Lista.Count; i++)
             {
                 // Hallamos al cliente
