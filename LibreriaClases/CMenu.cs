@@ -55,7 +55,7 @@ namespace LibreriaClases
             Console.WriteLine("9. Total de dinero recaudado en una fecha");
             Console.WriteLine("10. El producto que más se vendió");
             Console.WriteLine(" -- Ingrese la opción: ");
-            int Opcion = ValidarEntero("Debe ingresar un número, entre 1 y 8", 1, 8);
+            int Opcion = ValidarEntero("Debe ingresar un número, entre 1 y 8", 1, 10);
             EjecutarOpcion(Opcion, Clientes, Productos, RegistroVentas);
         }
         private static void EjecutarOpcion(int opcion, ArrayList Clientes, ArrayList Productos, ArrayList RegistroVentas)
