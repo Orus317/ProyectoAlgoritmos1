@@ -129,7 +129,32 @@ namespace LibreriaClases
             Console.WriteLine("Descripción: " + descripcion_mas_vendido);
             Console.WriteLine("Unidades vendidas: " + mas_vendido);
         }
-
+        public static void listarVentasPorFecha(ArrayList RegistroVentas, string fecha)
+        {
+            fecha = ValidarFecha(fecha);
+            foreach (object Venta in RegistroVentas)
+            {
+                if (((CRegistroVentas)Venta).Fecha == fecha)
+                    ((CRegistroVentas)Venta).Mostrar();
+            }
+        }
+        private static string ValidarFecha(string fecha)
+        {
+            string[] digitosFechaStr = fecha.Split("/");
+            int[] digitosFechaInt = digitosFechaStr.Select(k => int.Parse(k)).ToArray();
+            if (digitosFechaInt[0] > 0 && digitosFechaInt[0] < 32)
+            {
+                if (digitosFechaInt[1] > 0 && digitosFechaInt[1] < 13)
+                {
+                    if (digitosFechaInt[2] > 0)
+                    {
+                        return fecha;
+                    }
+                }
+            }
+            Console.WriteLine("La fecha no es válida");
+            return "NE";
+        }
         public void Mostrar()
         {
             Console.WriteLine("Identificador de venta:" + IdVenta);
