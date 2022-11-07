@@ -35,6 +35,7 @@ namespace LibreriaClases
         }
         public static void MostrarMenu(ArrayList Clientes, ArrayList Productos, ArrayList RegistroVentas)
         {
+            Console.WriteLine("=====================================");
             Console.WriteLine("APP CENTRO COMERCIAL - SUPERMERCADO");
             // Ejecutar constructor de un producto
             Console.WriteLine("1. Ingreso de nuevos productos");
@@ -118,14 +119,14 @@ namespace LibreriaClases
                     break;
                 case 7:
                     Console.WriteLine("--------");
-                    Console.Write("Escribir la fecha");
+                    Console.Write("Escribir la fecha: ");
                     string __fecha = Console.ReadLine();
                     CRegistroVentas.listarVentasPorFecha(RegistroVentas, __fecha);
                     Console.WriteLine("--------");
                     break;
                 case 8:
                     Console.WriteLine("--------");
-                    Console.Write("Escribir el DNI del cliente");
+                    Console.Write("Escribir el DNI del cliente: ");
                     string _id_cliente = CCliente.ValidarCliente(Clientes, Console.ReadLine());
                     CRegistroVentas.listarVentasCliente(RegistroVentas, _id_cliente);
                     Console.WriteLine("--------");
