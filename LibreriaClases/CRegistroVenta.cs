@@ -54,17 +54,31 @@ namespace LibreriaClases
         #endregion
 
         // Constructor
-        public CRegistroVentas(string id_venta, string nro_docventa, string fecha, string id_cliente, string id_producto, int cantidad, double precio_unitario, ArrayList Clientes)
+        public CRegistroVentas(string id_venta, string nro_docventa, string fecha, string id_cliente, string id_producto, int cantidad, ArrayList Clientes, ArrayList Productos)
         {
             IdVenta = id_venta;
             NroDocVenta = nro_docventa;
             Fecha = fecha;
             IdCliente = CCliente.ValidarCliente(Clientes, id_cliente);
-            IdProducto = id_producto;
-            Cantidad = cantidad;
-            PrecioUnitario = precio_unitario;
+            IdProducto = CProducto.ValidarProducto(Productos, id_producto);
+            PrecioUnitario = CProducto.RetornarProductoPorID(Productos, IdProducto).PrecioUnitario;
+            Cantidad = VerificarStock(IdProducto, Productos, cantidad);
         }
-
+        // Verificar stock
+        public static int VerificarStock(string IdProducto, ArrayList Productos, int cantidad)
+        {
+            CProducto ProductoEncontrado = CProducto.RetornarProductoPorID(Productos, IdProducto);
+            if (ProductoEncontrado.Stock >= cantidad)
+            {
+                ProductoEncontrado.Stock -= cantidad;
+            } else
+            {
+                Console.WriteLine("Fuera de stock");
+                ProductoEncontrado.Stock = -1;
+                cantidad = 0;
+            }
+            return cantidad;
+        }
         // Listar 
         public static void ListarRegistroVentas(ArrayList arr)
         {

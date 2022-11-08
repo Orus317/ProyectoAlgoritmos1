@@ -8,7 +8,7 @@ namespace LibreriaClases
         private string _Descripcion;
         private string _Tipo;
         private string _UnidadMedida;
-        private int _Stock;
+        private int _Stock; 
         private double _PrecioUnitario;
 
         // Getters and setters
@@ -70,7 +70,17 @@ namespace LibreriaClases
             Console.WriteLine("Este producto no existe");
             return "NE";
         }
-
+        public static CProducto RetornarProductoPorID(ArrayList Productos, string id)
+        {
+            foreach (object producto in Productos)
+            {
+                if (((CProducto)producto).IdProducto == id)
+                {
+                    return (CProducto)producto;
+                }
+            }
+            return new CProducto("NE", "NE", "NE", "NE", 0, 0);
+        }
         public void Mostrar(){
             Console.WriteLine("Identificardor: " + IdProducto);
             Console.WriteLine("Descripcción: " + Descripcion);

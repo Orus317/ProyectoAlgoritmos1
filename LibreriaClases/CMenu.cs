@@ -99,9 +99,8 @@ namespace LibreriaClases
                     string id_producto = CProducto.ValidarProducto(Productos, Console.ReadLine());
                     Console.Write("Ingresar la cantidad de productos adquiridos: ");
                     int cantidad = int.Parse(Console.ReadLine());
-                    Console.Write("Ingresar el precio unitario: ");
-                    double _precioUnitario = double.Parse(Console.ReadLine());
-                    CRegistroVentas nuevoRegistro = new(_id, nro_venta, fecha, id_cliente, id_producto, cantidad, _precioUnitario, Clientes);
+                    CRegistroVentas nuevoRegistro = new(_id, nro_venta, fecha, id_cliente, id_producto, cantidad, Clientes, Productos);
+                    RegistroVentas.Add(nuevoRegistro);
                     Console.WriteLine("--------");
                     break;
                 case 4:
