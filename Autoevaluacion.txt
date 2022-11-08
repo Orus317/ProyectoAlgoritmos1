@@ -1,0 +1,39 @@
+AUTOEVALUACIÓN
+a. Consideraciones técnicas
+- El proyecto se realizó en NET 6.0 por lo que no hubo necesidad de importar librerías recurrentes como en las versiones anteriores de NET
+- Por la misma razón es que no se puede apreciar un "entry point" en el programa, en NET 6.0 el compilador agrega toda la estructura inicial (al clase Program y el método Main) al momento de la compilación. 
+- Se uso una estructura separada entre el archivo que contenía el entry point y al biblioteca de clases
+
+
+b. Preguntas implementadas
+	1. Primera pregunta: 
+		Estado: Pregunta implementada correctamente
+		Detalles: Para ingresar nuevos productos solo se piden los datos necesarios para el constructor y se construye un objeto que se añade a un "ArrayList" que 			contiene todos los productos 
+	2. Segunda pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Para ingresar nuevos clientes al igual que con los productos solo se piden los datos necesarios para el constructor y se construye un objeto que 			se añade a un "ArrayList" que contiene a todos los clientes
+	3. Tercera pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Para ingresar nuevos clientes al igual que con los productos solo se piden los datos necesarios para el constructor y se construye un objeto que 		se añade a un "ArrayList" que contiene a todos los clientes
+	4. Cuarta pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Para listar los clientes simplemente recorremos el arraylist 'Clientes', verificamos que cada elemento sea una instancia de CCliente para luego usar el método 'Mostrar'.
+	5. Quinta pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Para listar los productos simplemente recorremos el arraylist 'Productos', verificamos que cada elemento sea una instancia de CProducto para luego usar el método 'Mostrar'.
+	6. Sexta pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Para listar las ventas simplemente recorremos el arraylist 'RegistroVentas', verificamos que cada elemento sea una instancia de CRegistroVentas para luego usar el método 'Mostrar'.
+	7. Séptima pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Primero se verifica la fecha que pasa el usuario, para posteriormente proceder a buscar una Venta que figure con dicha fecha. Se ejecuta un ciclo 'foreach' junto a una mutación o casting para poder tomar el object como una isntancia de 'CRegistroVenta' y así mostrar la venta que se realizó en dicha fecha
+	8. Octava pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Debemos buscar al cliente en la lista 'RegistroVenta' e imprimir la información de las ventas a ese cliente, para ello creamos una variable auxiliar 'a' que nos servirá más adelante para saber el número de ventas; recorremos el arraylist 'RegistroVenta'con un bucle fijo, cuando lo encontremos usamos el método 'Mostrar'. Por último calculamos el subtotal multiplicando la cantidad con el precio unitario. No olvidemos a la variable 'a' que si es que no se encuentra al cliente en el arraylist 'RegistroVenta' tendrá el valor 0, pues cada vez que encontremos al cliente le sumanos una unidad a 'a'.
+	9. Novena pregunta:
+		Estado: Pregunta implementada correctamente
+ 		Detalles: Buscamos la fecha en el arraylist 'RegistroVenta' y calculamos el dinero recaudado añadiendo el resultado de multiplicar de la cantidad con el precio unitario cada vez que encontremos la fecha.
+	10. Décima pregunta:
+		Estado: Pregunta implementada correctamente
+		Detalles: Primero devemos tomar a cada producto y compararlo con los demás del arraylist , esto para saber el total de productos vendidos de ese producto, usaremos dos bucles fijos anidados. Para saber qué producto se vendió más necesitaremos de un contador que sumará todas las unidades vendidas de cada producto y este será comparado con el resultado del producto anterior para saber si es mayor o no, al terminar los bucles tendremos el id del producto más vendido que lo usaremos para en contrar su descripción en el arraylist 'Productos'.
+

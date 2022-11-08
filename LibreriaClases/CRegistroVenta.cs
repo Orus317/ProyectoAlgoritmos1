@@ -67,12 +67,16 @@ namespace LibreriaClases
         // Verificar stock
         public static int VerificarStock(string IdProducto, ArrayList Productos, int cantidad)
         {
+            // Encontrar el producto por el ID en el ArrayList de Productos
             CProducto ProductoEncontrado = CProducto.RetornarProductoPorID(Productos, IdProducto);
+            // Verificar que exista stock
             if (ProductoEncontrado.Stock >= cantidad)
             {
+                // Actualizar stock
                 ProductoEncontrado.Stock -= cantidad;
             } else
             {
+                // Sacar un producto de stock
                 Console.WriteLine("Fuera de stock");
                 ProductoEncontrado.Stock = -1;
                 cantidad = 0;
